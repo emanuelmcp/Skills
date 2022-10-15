@@ -1,0 +1,6 @@
+persistence_db:
+  hostname: "localhost"
+  port: "3306"
+  database: "prueba"
+  username: "root"
+  password: ""
