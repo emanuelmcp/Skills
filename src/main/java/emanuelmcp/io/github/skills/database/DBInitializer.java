@@ -1,18 +1,20 @@
 package emanuelmcp.io.github.skills.database;
 
 import com.google.inject.Inject;
+import emanuelmcp.io.github.skills.database.managers.PostgresConnectionPoolManager;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class DBInitializer {
     @Inject
-    ConnectionPoolManager connectionPoolManager;
+    PostgresConnectionPoolManager PostgresConnectionPoolManager;
     public void initializeDB() throws SQLException {
         Connection connection = null;
         PreparedStatement statement = null;
         try {
-            connection = connectionPoolManager.getDataSource().getConnection();
+            connection = PostgresConnectionPoolManager.getDataSource().getConnection();
             for (String query : DBStructureQueries.QUERIES){
                 statement = connection.prepareStatement(query);
                 statement.executeUpdate();
@@ -20,7 +22,7 @@ public class DBInitializer {
         } catch (SQLException ex) {
             ex.printStackTrace();
         } finally {
-            connectionPoolManager.close(connection, statement, null);
+            PostgresConnectionPoolManager.close(connection, statement, null);
         }
     }
 }

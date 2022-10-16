@@ -1,4 +1,4 @@
-package emanuelmcp.io.github.skills.database;
+package emanuelmcp.io.github.skills.database.managers;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
@@ -16,7 +16,7 @@ import java.sql.SQLException;
 
 @Getter
 @Singleton
-public class ConnectionPoolManager implements DBConnector{
+public class PostgresConnectionPoolManager implements DBConnector{
     private String hostname;
     private String port;
     private String database;
