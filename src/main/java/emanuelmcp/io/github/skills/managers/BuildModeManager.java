@@ -5,8 +5,6 @@ import emanuelmcp.io.github.skills.annotations.PostConstruct;
 import emanuelmcp.io.github.skills.interfaces.Registrable;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
-
-import java.lang.annotation.RetentionPolicy;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 

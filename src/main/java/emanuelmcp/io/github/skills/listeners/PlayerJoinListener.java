@@ -9,5 +9,6 @@ import java.sql.SQLException;
 public class PlayerJoinListener implements Listener {
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) throws SQLException {
+
     }
 }

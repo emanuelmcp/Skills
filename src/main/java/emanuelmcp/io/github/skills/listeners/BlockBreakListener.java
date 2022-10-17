@@ -1,6 +1,4 @@
 package emanuelmcp.io.github.skills.listeners;
-
-import com.google.inject.Singleton;
 import emanuelmcp.io.github.skills.managers.BuildModeManager;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

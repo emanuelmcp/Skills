@@ -4,3 +4,8 @@ persistence_db:
   database: "prueba"
   username: "root"
   password: ""
+cache_db:
+  hostname: "localhost"
+  port: "3306"
+  username: "root"
+  password: ""

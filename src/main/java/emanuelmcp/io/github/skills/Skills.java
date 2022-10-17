@@ -26,10 +26,9 @@ public final class Skills extends JavaPlugin {
         injector.injectMembers(this);
         listenerIntializer.init(injector);
         commandInitializer.init(injector);
-        dbInitializer.initializeDB();
     }
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
+        dbInitializer.closePool();
     }
 }

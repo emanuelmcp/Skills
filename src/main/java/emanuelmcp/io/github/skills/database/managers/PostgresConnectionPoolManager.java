@@ -6,6 +6,7 @@ import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import emanuelmcp.io.github.skills.annotations.PostConstruct;
 import emanuelmcp.io.github.skills.interfaces.DBConnector;
+import emanuelmcp.io.github.skills.interfaces.DBPoolConnectionManager;
 import lombok.Getter;
 import org.bukkit.configuration.file.FileConfiguration;
 
@@ -14,19 +15,15 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-@Getter
 @Singleton
-public class PostgresConnectionPoolManager implements DBConnector{
-    private String hostname;
-    private String port;
-    private String database;
-    private String username;
-    private String password;
+public class PostgresConnectionPoolManager extends DBConfig implements DBConnector, DBPoolConnectionManager {
     @Inject
     private FileConfiguration config;
     @Inject
     private HikariConfig hikariConfig;
+    @Getter
     private HikariDataSource dataSource;
+    protected String database;
     @PostConstruct
     public void init() {
         hostname = config.getString("persistence_db.hostname");
