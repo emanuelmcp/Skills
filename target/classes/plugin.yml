@@ -1,0 +1,11 @@
+name: Skills
+version: '1.0-SNAPSHOT'
+main: emanuelmcp.io.github.skills.Skills
+api-version: 1.19
+authors: [ emanuelmcp ]
+description: A plugin for have skills in minecraft server
+website: https://github.com/emanuelmcp
+commands:
+  build:
+    description: Comando con DI
+    aliases: buildmode
