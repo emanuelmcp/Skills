@@ -1,9 +1,7 @@
 package emanuelmcp.io.github.skills.database.queries;
 
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class TableQueries {
     public final static List<String> QUERIES = Arrays.asList(
@@ -24,7 +22,6 @@ public class TableQueries {
                     "CONSTRAINT backpack_fk FOREIGN KEY (id_backpack) REFERENCES backpack(id_backpack), " +
                     "CONSTRAINT skills_fk FOREIGN KEY (id_skill) REFERENCES skills(id_skill));",
 
-
             "CREATE TABLE IF NOT EXISTS jobs(" +
                     "id_job int PRIMARY KEY, " +
                     "name_job varchar(50));",
@@ -36,16 +33,14 @@ public class TableQueries {
                     "CONSTRAINT skills_jobs_skills_fk FOREIGN KEY (id_skill) REFERENCES skills(id_skill), " +
                     "CONSTRAINT skills_jobs_jobs_fk FOREIGN KEY (id_job) REFERENCES jobs(id_job));",
 
-
             "CREATE TABLE IF NOT EXISTS items(" +
-                    "id_item int PRIMARY KEY, " +
-                    "name_item varchar(36));",
+                    "name_item varchar(36) PRIMARY KEY);",
 
             "CREATE TABLE IF NOT EXISTS backpack_items(" +
                     "id_backpack int , " +
-                    "id_item int, " +
-                    "CONSTRAINT backpack_pk PRIMARY KEY (id_backpack, id_item), " +
+                    "name_item varchar(36), " +
+                    "CONSTRAINT backpack_pk PRIMARY KEY (id_backpack, name_item), " +
                     "CONSTRAINT backpack_items_backpack_fk FOREIGN KEY (id_backpack) REFERENCES backpack(id_backpack), " +
-                    "CONSTRAINT backpack_items_items_fk FOREIGN KEY (id_item) REFERENCES items(id_item));"
+                    "CONSTRAINT backpack_items_items_fk FOREIGN KEY (name_item) REFERENCES items(name_item));"
     );
 }

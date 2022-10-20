@@ -1,7 +1,7 @@
 emanuelmcp\io\github\skills\database\queries\PlayerQueries.class
-emanuelmcp\io\github\skills\interfaces\DBPoolConnectionManager.class
 emanuelmcp\io\github\skills\utils\ChatUtils.class
 emanuelmcp\io\github\skills\cache\CacheLoader.class
+emanuelmcp\io\github\skills\interfaces\ConnectionManager.class
 emanuelmcp\io\github\skills\database\models\Account.class
 emanuelmcp\io\github\skills\listeners\PlayerJoinListener.class
 emanuelmcp\io\github\skills\utils\Constants.class
@@ -14,7 +14,6 @@ emanuelmcp\io\github\skills\injector\BinderModule.class
 emanuelmcp\io\github\skills\database\managers\PostgresConnectionPoolManager.class
 emanuelmcp\io\github\skills\intializers\ListenerIntializer.class
 emanuelmcp\io\github\skills\database\managers\DBConfig.class
-emanuelmcp\io\github\skills\interfaces\DBConnector.class
 emanuelmcp\io\github\skills\listeners\BlockPlaceListener.class
 emanuelmcp\io\github\skills\database\managers\RedisPoolConnectionManager.class
 emanuelmcp\io\github\skills\menus\MainMenu.class

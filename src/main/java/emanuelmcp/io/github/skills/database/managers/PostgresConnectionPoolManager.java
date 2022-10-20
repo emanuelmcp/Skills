@@ -5,8 +5,7 @@ import com.google.inject.Singleton;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import emanuelmcp.io.github.skills.annotations.PostConstruct;
-import emanuelmcp.io.github.skills.interfaces.DBConnector;
-import emanuelmcp.io.github.skills.interfaces.DBPoolConnectionManager;
+import emanuelmcp.io.github.skills.interfaces.ConnectionManager;
 import lombok.Getter;
 import org.bukkit.configuration.file.FileConfiguration;
 
@@ -16,7 +15,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 @Singleton
-public class PostgresConnectionPoolManager extends DBConfig implements DBConnector, DBPoolConnectionManager {
+public class PostgresConnectionPoolManager extends DBConfig implements ConnectionManager {
     @Inject
     private FileConfiguration config;
     @Inject
