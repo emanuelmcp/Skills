@@ -20,8 +20,6 @@ emanuelmcp\io\github\skills\database\managers\RedisPoolConnectionManager.class
 emanuelmcp\io\github\skills\menus\MainMenu.class
 emanuelmcp\io\github\skills\interfaces\Registrable.class
 emanuelmcp\io\github\skills\Skills.class
-emanuelmcp\io\github\skills\database\dao\ConstraintsInitializer.class
-emanuelmcp\io\github\skills\database\queries\TableQueries$1.class
 emanuelmcp\io\github\skills\interfaces\Initializer.class
 emanuelmcp\io\github\skills\intializers\CommandInitializer.class
 emanuelmcp\io\github\skills\annotations\PostConstruct.class

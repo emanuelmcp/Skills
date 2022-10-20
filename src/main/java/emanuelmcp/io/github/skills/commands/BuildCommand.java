@@ -28,7 +28,6 @@ public class BuildCommand implements CommandExecutor {
             player.sendMessage(Constants.BUILD_MODE_ON);
             player.setGameMode(GameMode.CREATIVE);
         }
-
         return false;
     }
 }

@@ -1,4 +1,6 @@
 package emanuelmcp.io.github.skills.cache;
 
-public class CacheLoader {
+public interface CacheLoader {
+    void load();
+    void unload();
 }
