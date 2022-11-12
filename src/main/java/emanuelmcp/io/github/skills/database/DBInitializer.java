@@ -24,7 +24,6 @@ public class DBInitializer {
                 statement = connection.prepareStatement(query);
                 statement.executeUpdate();
             }
-            fillItemsTable();
         } catch (SQLException ex) {
             ex.printStackTrace();
         } finally {

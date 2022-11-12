@@ -20,9 +20,11 @@ public class PostgresConnectionPoolManager extends DBConfig implements Connectio
     private FileConfiguration config;
     @Inject
     private HikariConfig hikariConfig;
+    @Inject
+    DBConfig dbConfig;
     @Getter
     private HikariDataSource dataSource;
-    protected String database;
+
     @PostConstruct
     public void init() {
         hostname = config.getString("persistence_db.hostname");
@@ -33,10 +35,13 @@ public class PostgresConnectionPoolManager extends DBConfig implements Connectio
     }
     @PostConstruct
     public void setupPool(){
-        hikariConfig.setJdbcUrl("jdbc:mysql://" + hostname + ":" + port + "/" + database);
-        hikariConfig.setDriverClassName("com.mysql.jdbc.Driver");
+        hikariConfig.setJdbcUrl("jdbc:postgresql://" + hostname + ":" + port + "/" + database);
+        //hikariConfig.setJdbcUrl("jdbc:postgresql://localhost:5432/test_db");
+        hikariConfig.setDriverClassName("org.postgresql.Driver");
         hikariConfig.setUsername(username);
+        //hikariConfig.setUsername("root");
         hikariConfig.setPassword(password);
+        //hikariConfig.setPassword("root");
         hikariConfig.setMinimumIdle(3);
         hikariConfig.setMaximumPoolSize(10);
         hikariConfig.setConnectionTimeout(5000);

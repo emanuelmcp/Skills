@@ -40,13 +40,6 @@
                         </goals>
                         <configuration>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
-                            <relocations>
-                                <relocation>
-                                    <pattern>redis.clients.jedis</pattern>
-                                    <shadedPattern>emanuelmcp.io.github.skills.internal.jedis
-                                    </shadedPattern>
-                                </relocation>
-                            </relocations>
                         </configuration>
                     </execution>
                 </executions>
@@ -56,7 +49,7 @@
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>3.2.2</version>
                 <configuration>
-                    <outputDirectory>C:\Users\emanu\Desktop\prueba paper\plugins</outputDirectory>
+                    <outputDirectory>/home/eniac/Documentos/Minecraft Server/plugins</outputDirectory>
                 </configuration>
             </plugin>
         </plugins>
@@ -102,17 +95,15 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>redis.clients</groupId>
-            <artifactId>jedis</artifactId>
-            <version>4.3.0</version>
-            <type>jar</type>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
             <groupId>com.zaxxer</groupId>
             <artifactId>HikariCP</artifactId>
             <version>5.0.1</version>
             <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.5.0</version>
         </dependency>
     </dependencies>
 </project>

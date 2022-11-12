@@ -15,7 +15,7 @@ public class TableQueries {
 
             "CREATE TABLE IF NOT EXISTS accounts (" +
                     "uuid varchar(36) PRIMARY KEY, " +
-                    "balance double, health int, " +
+                    "balance int, health int, " +
                     "password varchar(36), " +
                     "id_skill int, " +
                     "id_backpack int, " +

@@ -20,7 +20,6 @@ public final class Skills extends JavaPlugin {
     @SneakyThrows
     @Override
     public void onEnable() {
-        System.out.println("_________________________________________________________________________");
         // Plugin startup logic
         final Injector injector = Guice.createInjector(new BinderModule(this));
         injector.injectMembers(this);

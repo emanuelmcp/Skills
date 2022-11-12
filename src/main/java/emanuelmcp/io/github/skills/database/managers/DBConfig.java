@@ -7,4 +7,6 @@ public abstract class DBConfig {
     protected String port;
     protected String username;
     protected String password;
+
+    protected String database;
 }
