@@ -1,18 +1,25 @@
 package emanuelmcp.io.github.skills.database.models;
 
-import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@NoArgsConstructor
+import java.util.Date;
+
 @Getter
 @Setter
+@Builder
 public class Account {
     private String uuid;
-    private double balance;
-    private int health;
+    private String email;
     private String password;
-    private int idSkill;
-    private int idBackpack;
+    private Date last_login;
+    private Boolean banned;
+    private Integer kills;
+    private Integer deaths;
+    private Long brokenBlocks;
+    private Double balance;
+    private Double health;
+    private Integer idSkill;
+    private Integer idBackpack;
 }

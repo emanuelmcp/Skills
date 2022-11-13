@@ -7,6 +7,7 @@ import emanuelmcp.io.github.skills.annotations.PostConstruct;
 import emanuelmcp.io.github.skills.interfaces.Initializer;
 import emanuelmcp.io.github.skills.listeners.BlockBreakListener;
 import emanuelmcp.io.github.skills.listeners.BlockPlaceListener;
+import emanuelmcp.io.github.skills.listeners.PlayerJoinListener;
 import emanuelmcp.io.github.skills.listeners.PlayerQuitListener;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -28,5 +29,6 @@ public class ListenerIntializer implements Initializer {
         pluginManager.registerEvents(injector.getInstance(PlayerQuitListener.class), javaPlugin);
         pluginManager.registerEvents(injector.getInstance(BlockBreakListener.class), javaPlugin);
         pluginManager.registerEvents(injector.getInstance(BlockPlaceListener.class), javaPlugin);
+        pluginManager.registerEvents(injector.getInstance(PlayerJoinListener.class), javaPlugin);
     }
 }

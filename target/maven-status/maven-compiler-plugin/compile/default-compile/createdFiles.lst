@@ -1,15 +1,18 @@
 emanuelmcp/io/github/skills/interfaces/ConnectionManager.class
 emanuelmcp/io/github/skills/injector/BinderModule.class
-emanuelmcp/io/github/skills/database/DBInitializer.class
+emanuelmcp/io/github/skills/database/mappers/AccountMapper.class
 emanuelmcp/io/github/skills/listeners/PlayerQuitListener.class
 emanuelmcp/io/github/skills/Skills.class
 emanuelmcp/io/github/skills/database/dao/AccountDAO.class
+emanuelmcp/io/github/skills/database/structure/TableQueries.class
 emanuelmcp/io/github/skills/database/EncryptUtils.class
 emanuelmcp/io/github/skills/utils/ChatUtils.class
 emanuelmcp/io/github/skills/listeners/PlayerJoinListener.class
 emanuelmcp/io/github/skills/listeners/BlockBreakListener.class
 emanuelmcp/io/github/skills/intializers/ListenerIntializer.class
+emanuelmcp/io/github/skills/database/structure/DBInitializer.class
 emanuelmcp/io/github/skills/interfaces/Registrable.class
+emanuelmcp/io/github/skills/database/models/Account$AccountBuilder.class
 emanuelmcp/io/github/skills/listeners/BlockPlaceListener.class
 emanuelmcp/io/github/skills/utils/Constants.class
 emanuelmcp/io/github/skills/database/managers/PostgresConnectionPoolManager.class
@@ -17,7 +20,6 @@ emanuelmcp/io/github/skills/database/queries/PlayerQueries.class
 emanuelmcp/io/github/skills/commands/BuildCommand.class
 emanuelmcp/io/github/skills/database/models/Account.class
 emanuelmcp/io/github/skills/intializers/CommandInitializer.class
-emanuelmcp/io/github/skills/database/queries/TableQueries.class
 emanuelmcp/io/github/skills/database/managers/DBConfig.class
 emanuelmcp/io/github/skills/cache/CacheLoader.class
 emanuelmcp/io/github/skills/menus/MainMenu.class

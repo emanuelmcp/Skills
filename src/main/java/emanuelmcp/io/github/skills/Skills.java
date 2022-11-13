@@ -3,7 +3,7 @@ package emanuelmcp.io.github.skills;
 import com.google.inject.Guice;
 import com.google.inject.Inject;
 import com.google.inject.Injector;
-import emanuelmcp.io.github.skills.database.DBInitializer;
+import emanuelmcp.io.github.skills.database.structure.DBInitializer;
 import emanuelmcp.io.github.skills.injector.BinderModule;
 import emanuelmcp.io.github.skills.intializers.CommandInitializer;
 import emanuelmcp.io.github.skills.intializers.ListenerIntializer;

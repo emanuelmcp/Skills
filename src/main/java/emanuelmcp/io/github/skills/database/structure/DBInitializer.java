@@ -1,10 +1,9 @@
-package emanuelmcp.io.github.skills.database;
+package emanuelmcp.io.github.skills.database.structure;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import emanuelmcp.io.github.skills.annotations.PostConstruct;
 import emanuelmcp.io.github.skills.database.managers.PostgresConnectionPoolManager;
-import emanuelmcp.io.github.skills.database.queries.TableQueries;
 import org.bukkit.Material;
 
 import java.sql.Connection;
@@ -39,9 +38,9 @@ public class DBInitializer {
         try {
             connection = pool.getDataSource().getConnection();
             Material[] allItems = Material.values();
-            for (int i = 0; i < allItems.length; i++) {
+            for (Material allItem : allItems) {
                 statement = connection.prepareStatement("INSERT IGNORE INTO items(name_item) VALUES (?)");
-                statement.setString(1, String.valueOf(allItems[i]));
+                statement.setString(1, String.valueOf(allItem));
                 statement.executeUpdate();
             }
         } catch (SQLException ex) {
