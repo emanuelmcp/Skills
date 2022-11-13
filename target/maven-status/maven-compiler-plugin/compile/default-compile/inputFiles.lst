@@ -5,6 +5,7 @@
 /home/eniac/Documentos/GitHub/Skills/src/main/java/emanuelmcp/io/github/skills/database/models/Account.java
 /home/eniac/Documentos/GitHub/Skills/src/main/java/emanuelmcp/io/github/skills/managers/BuildModeManager.java
 /home/eniac/Documentos/GitHub/Skills/src/main/java/emanuelmcp/io/github/skills/Skills.java
+/home/eniac/Documentos/GitHub/Skills/src/main/java/emanuelmcp/io/github/skills/database/mappers/RowMapper.java
 /home/eniac/Documentos/GitHub/Skills/src/main/java/emanuelmcp/io/github/skills/injector/BinderModule.java
 /home/eniac/Documentos/GitHub/Skills/src/main/java/emanuelmcp/io/github/skills/database/managers/DBConfig.java
 /home/eniac/Documentos/GitHub/Skills/src/main/java/emanuelmcp/io/github/skills/database/mappers/AccountMapper.java
@@ -19,9 +20,11 @@
 /home/eniac/Documentos/GitHub/Skills/src/main/java/emanuelmcp/io/github/skills/database/queries/PlayerQueries.java
 /home/eniac/Documentos/GitHub/Skills/src/main/java/emanuelmcp/io/github/skills/interfaces/ConnectionManager.java
 /home/eniac/Documentos/GitHub/Skills/src/main/java/emanuelmcp/io/github/skills/database/managers/PostgresConnectionPoolManager.java
+/home/eniac/Documentos/GitHub/Skills/src/main/java/emanuelmcp/io/github/skills/database/implementations/PostgresAccountDAO.java
 /home/eniac/Documentos/GitHub/Skills/src/main/java/emanuelmcp/io/github/skills/cache/CacheLoader.java
 /home/eniac/Documentos/GitHub/Skills/src/main/java/emanuelmcp/io/github/skills/annotations/PostConstruct.java
 /home/eniac/Documentos/GitHub/Skills/src/main/java/emanuelmcp/io/github/skills/listeners/PlayerQuitListener.java
 /home/eniac/Documentos/GitHub/Skills/src/main/java/emanuelmcp/io/github/skills/listeners/PlayerJoinListener.java
 /home/eniac/Documentos/GitHub/Skills/src/main/java/emanuelmcp/io/github/skills/utils/Constants.java
+/home/eniac/Documentos/GitHub/Skills/src/main/java/emanuelmcp/io/github/skills/database/dao/DAO.java
 /home/eniac/Documentos/GitHub/Skills/src/main/java/emanuelmcp/io/github/skills/intializers/CommandInitializer.java

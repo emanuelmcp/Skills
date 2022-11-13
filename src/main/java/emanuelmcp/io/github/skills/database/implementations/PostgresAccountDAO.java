@@ -3,11 +3,15 @@ package emanuelmcp.io.github.skills.database.implementations;
 import com.google.inject.Inject;
 import emanuelmcp.io.github.skills.database.dao.AccountDAO;
 import emanuelmcp.io.github.skills.database.managers.PostgresConnectionPoolManager;
+import emanuelmcp.io.github.skills.database.mappers.AccountMapper;
 import emanuelmcp.io.github.skills.database.models.Account;
 import emanuelmcp.io.github.skills.database.queries.PlayerQueries;
 import org.jetbrains.annotations.NotNull;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,56 +19,27 @@ import java.util.Optional;
 public class PostgresAccountDAO implements AccountDAO {
     @Inject
     PostgresConnectionPoolManager pool;
-    public Account findAccountByUUID(@NotNull String uuid){
-        Account player = null;
+    @Inject
+    AccountMapper accountMapper;
+    @Override
+    public Optional<Account> get(@NotNull String id) {
+        Optional<Account> player = Optional.empty();
         Connection connection = null;
         PreparedStatement statement = null;
-        ResultSet results = null;
+        ResultSet result = null;
         try {
             connection = pool.getConnection();
             statement = connection.prepareStatement(PlayerQueries.FIND_BY_UIID);
-            statement.setString(1, uuid);
-            results = statement.executeQuery();
-            //if(!results.next()) return player;
-            String email = results.getString("email");
-            String password = results.getString("password");
-            Date lastLogin = results.getDate("last_login");
-            boolean banned = results.getBoolean("banned");
-            int kills = results.getInt("kills");
-            int deaths = results.getInt("deaths");
-            long brokenBlocks = results.getLong("broken_block");
-            double balance = results.getInt("balance");
-            double health = results.getDouble("health");
-            int idSkill = results.getInt("id_skill");
-            int idBackpack = results.getInt("id_backpack");
-            return Account.builder()
-                    .email(email)
-                    .password(password)
-                    .last_login(lastLogin)
-                    .banned(banned)
-                    .kills(kills)
-                    .deaths(deaths)
-                    .brokenBlocks(brokenBlocks)
-                    .balance(balance)
-                    .health(health)
-                    .idSkill(idSkill)
-                    .idBackpack(idBackpack)
-                    .build();
+            statement.setString(1, id);
+            result = statement.executeQuery();
+            if(!result.next()) return player;
+            player = Optional.ofNullable(accountMapper.mapRow(result));
         } catch (SQLException ex){
             System.out.println("No se ha podido escribir en la base de datos");
         }finally {
-            pool.close(connection,statement, results);
+            pool.close(connection,statement, result);
         }
         return player;
-    }
-
-    public Boolean playerHaveSkill(@NotNull Account player){
-        return player.getIdSkill() != null;
-    }
-
-    @Override
-    public Optional<Account> get(Long id) {
-        return Optional.empty();
     }
 
     @Override

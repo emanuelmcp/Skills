@@ -1,6 +1,8 @@
 package emanuelmcp.io.github.skills.listeners;
 
 import com.google.inject.Inject;
+import emanuelmcp.io.github.skills.database.dao.AccountDAO;
+import emanuelmcp.io.github.skills.database.dao.DAO;
 import emanuelmcp.io.github.skills.database.implementations.PostgresAccountDAO;
 import emanuelmcp.io.github.skills.database.models.Account;
 import org.bukkit.entity.Player;
@@ -16,9 +18,9 @@ public class PlayerJoinListener implements Listener {
         Player player = event.getPlayer();
         Account account = postgresAccountDAO.findAccountByUUID(player.getUniqueId().toString());
         if (account == null){
-            System.out.println("No tienes skill");
+            player.sendMessage("No tienes skill");
         } else {
-            System.out.println("Tienes skill");
+            player.sendMessage("Tienes skill");
         }
     }
 }
