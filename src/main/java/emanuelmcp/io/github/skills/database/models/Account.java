@@ -13,7 +13,7 @@ public class Account {
     private String uuid;
     private String email;
     private String password;
-    private Date last_login;
+    private Date lastLogin;
     private Boolean banned;
     private Integer kills;
     private Integer deaths;

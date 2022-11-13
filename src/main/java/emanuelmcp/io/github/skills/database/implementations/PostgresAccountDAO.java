@@ -33,7 +33,7 @@ public class PostgresAccountDAO implements AccountDAO {
             statement.setString(1, id);
             result = statement.executeQuery();
             if(!result.next()) return player;
-            player = Optional.ofNullable(accountMapper.mapRow(result));
+            player = Optional.ofNullable(accountMapper.mapRowReader(result));
         } catch (SQLException ex){
             System.out.println("No se ha podido escribir en la base de datos");
         }finally {
