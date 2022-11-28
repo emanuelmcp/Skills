@@ -2,7 +2,6 @@ package emanuelmcp.io.github.skills.database.structure;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-import emanuelmcp.io.github.skills.annotations.PostConstruct;
 import emanuelmcp.io.github.skills.database.managers.PostgresConnectionPoolManager;
 import org.bukkit.Material;
 
@@ -13,7 +12,7 @@ import java.sql.SQLException;
 public class DBInitializer {
     @Inject
     PostgresConnectionPoolManager pool;
-    @PostConstruct
+    //@PostConstruct
     public void initializeDB() {
         Connection connection = null;
         PreparedStatement statement = null;
